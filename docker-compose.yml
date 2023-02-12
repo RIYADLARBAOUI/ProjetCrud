@@ -1,0 +1,19 @@
+services:
+  app_bd:
+    container_name: app_bd
+    image: "postgres:15"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER: ${DB_USER}
+      - POSTGRES_PASSWORD: ${DB_PASS}
+      - POSTGRES_DB: ${DB_NAME} 
+    volumes:
+      - app_bd_data: /var/lib/postgresql/data
+      
+volumes:
+  app_bd_data:{}
+
+    
+
+
